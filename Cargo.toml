@@ -1,0 +1,31 @@
+[package]
+name = "t4-mcp9808"
+version = "0.1.0"
+authors = ["John D. Corbett <corbett@pictographer.com>"]
+edition = "2021"
+description = "Monitors ambient temperature with a mcp9808 connected to a Teensy 4.0"
+repository = "https://github.com/pictographer/t4-mcp9808"
+license = "Apache 2.0"
+keywords = ["teensy4", "mcp9808", "i2c", "imxrt"]
+categories = ["embedded"]
+
+
+[dependencies]
+imxrt-log = { version = "0.1", default-features = false, features = ["log", "usbd"] }
+log = { version = "0.4", features = ["max_level_debug", "release_max_level_info"] }
+mcp9808 = "0.4.0"
+rtic = { version = "2", features = ["thumbv7-backend"] }
+rtic-monotonics = { version = "1", default-features = false, features = ["cortex-m-systick"] }
+teensy4-panic = { version = "0.2", features = ["log"] }
+
+[dependencies.teensy4-bsp]
+version = "0.5"
+features = ["rt"]
+
+# Don't optimize build dependencies, like proc macros.
+# Helps with build times.
+[profile.release.build-override]
+opt-level = 0
+
+# Generated from https://github.com/mciantyre/teensy4-rs-template.
+#   cargo generate --git https://github.com/mciantyre/teensy4-rs-template --name rust-t4
