@@ -9,7 +9,6 @@ license = "Apache 2.0"
 keywords = ["teensy4", "mcp9808", "i2c", "imxrt"]
 categories = ["embedded"]
 
-
 [dependencies]
 imxrt-log = { version = "0.1", default-features = false, features = ["log", "usbd"] }
 log = { version = "0.4", features = ["max_level_debug", "release_max_level_info"] }
@@ -28,4 +27,4 @@ features = ["rt"]
 opt-level = 0
 
 # Generated from https://github.com/mciantyre/teensy4-rs-template.
-#   cargo generate --git https://github.com/mciantyre/teensy4-rs-template --name rust-t4
+#   cargo generate --git https://github.com/mciantyre/teensy4-rs-template --name t4-mcp9808

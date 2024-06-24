@@ -48,10 +48,10 @@ The Teensy 4.0 should report the temperature and threshold periodically.
 
 To build
 --------
-   cargo build --release
+   cargo build --target=thumbv7em-none-eabihf --release
 
 To convert the executable from elf to Intel hex format
-   cargo objcopy --release -- -O ihex t4.hex
+   cargo objcopy --target=thumbv7em-none-eabihf --release -- -O ihex t4.hex
 
 To download the firmware into the Teensy 4.0
    teensy_loader_cli --mcu=TEENSY40 -v -w t4.hex
